@@ -1,0 +1,5 @@
+ssh_public_key_file="~/.ssh/id_rsa.pub"
+gcp_project_id="<YOUR_GCP_PROJECT_ID>"
+gcp_credentials_file="../service-key.json"
+gcp_region="europe-west3"
+gcp_zone="europe-west3-b"

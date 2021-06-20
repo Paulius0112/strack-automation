@@ -1,0 +1,20 @@
+
+### Validator
+[validator]
+polkadot-validator ansible_host=${validator_ip} ansible_user=ubuntu  subnet="172.20.0.0/24" provider=1
+
+[validator:vars]
+ansible_user=ubuntu
+# Preferably use a private telemetry server
+loggingFilter='sync=warn,afg=warn,babe=warn'
+
+[monitoring]
+polkadot-monitoring ansible_host=${monitoring_ip} ansible_user=root subnet="172.21.0.0/24" provider=6
+
+# ## Common variables
+[all:vars]
+ansible_connection=ssh
+# The name for how each node should be prefixed for the telemetry name
+project=syntropy-polkadot
+
+ansible_ssh_common_args='-o StrictHostKeyChecking=no -o ConnectTimeout=15'
